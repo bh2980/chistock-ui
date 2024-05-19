@@ -1,3 +1,5 @@
+# chistock-ui
+
 ![Group 251](https://github.com/bh2980/chistock-ui/assets/74360958/cafaf5ef-db72-4ce1-9e8c-ee9d584a224a)
 
 chistock-ui는 chistock을 위한 디자인 시스템 라이브러리입니다.  
@@ -10,15 +12,19 @@ chistock-ui는 chistock을 위한 디자인 시스템 라이브러리입니다.
 
 <br/>
 를 목표로 삼아 개발했습니다.
-
 <br/><br/>
+
+## 배포
+
+🚀 [NPM](https://www.npmjs.com/package/chistock-ui)
+
+<br/>
 
 ## 관련 사이트
 
-- 📕 Storybook - 준비 중
-- 🗒️ [Notion](https://bh2980.notion.site/chistock-ui-4e9b7bbd072d4ca49216d812c722422d?pvs=4)
-- 🚀 [NPM 배포 사이트](https://www.npmjs.com/package/chistock-ui)
-- 📈 [chistock으로 이동](https://github.com/bh2980/chistock)
+📕 Storybook - 준비 중  
+🗒️ [Notion](https://bh2980.notion.site/chistock-ui-4e9b7bbd072d4ca49216d812c722422d?pvs=4)  
+📈 [chistock으로 이동](https://github.com/bh2980/chistock)
 
 <br/>
 
