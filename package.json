@@ -10,10 +10,7 @@
       "import": "./dist/index.es.js",
       "require": "./dist/index.umd.js",
       "types": "./dist/index.d.ts"
-    },
-    "./dist/style.css": "./dist/style.css",
-    "./package.json": "./package.json",
-    "./dist/*": "./dist/*"
+    }
   },
   "files": [
     "/dist"
@@ -73,8 +70,6 @@
     "jest-environment-jsdom": "^29.7.0",
     "postcss": "^8.4.38",
     "prettier": "^3.2.5",
-    "rollup-plugin-ignore": "^1.0.10",
-    "rollup-plugin-postcss": "^4.0.2",
     "storybook": "^8.1.1",
     "storybook-addon-pseudo-states": "^3.1.1",
     "tailwindcss": "^3.4.3",
