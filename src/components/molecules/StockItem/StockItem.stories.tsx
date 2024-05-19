@@ -26,7 +26,6 @@ export const Default: Story = {
         ticker="AAPL"
         currentPrice={189.57}
         change={17.2}
-        changePercentage={20.5}
         market="NASDAQ"
       />
     </div>
@@ -43,7 +42,6 @@ export const Size: Story = {
         ticker="AAPL"
         currentPrice={189.57}
         change={17.2}
-        changePercentage={20.5}
         market="NASDAQ"
       />
       <StockItem
@@ -53,7 +51,6 @@ export const Size: Story = {
         ticker="AAPL"
         currentPrice={189.57}
         change={17.2}
-        changePercentage={20.5}
         market="NASDAQ"
       />
     </div>
@@ -70,7 +67,6 @@ export const TickerAccent: Story = {
         ticker="AAPL"
         currentPrice={189.57}
         change={17.2}
-        changePercentage={20.5}
         market="NASDAQ"
       />
     </div>
@@ -87,7 +83,6 @@ export const NoMarket: Story = {
         ticker="AAPL"
         currentPrice={189.57}
         change={17.2}
-        changePercentage={20.5}
       />
     </div>
   ),
@@ -96,13 +91,7 @@ export const NoMarket: Story = {
 export const NoImage: Story = {
   render: () => (
     <div className="w-[360rem]">
-      <StockItem
-        companyName="Apple Inc"
-        ticker="AAPL"
-        currentPrice={189.57}
-        change={17.2}
-        changePercentage={20.5}
-      />
+      <StockItem companyName="Apple Inc" ticker="AAPL" currentPrice={189.57} change={17.2} changePercentage={20.5} />
     </div>
   ),
 };
