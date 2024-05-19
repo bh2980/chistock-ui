@@ -21,7 +21,6 @@
     "noFallthroughCasesInSwitch": true,
 
     /* 추가 */
-    "removeComments": true,
     "declaration": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
@@ -44,14 +43,6 @@
   "include": [
     "index.ts",
     "src/**/*" // 원하는 소스 파일만 명시적으로 포함
-  ],
-  "exclude": [
-    "node_modules",
-    "**/*.test.ts",
-    "**/*.test.tsx",
-    "**/*.stories.tsx",
-    "*.config.ts", // tailwind 설정 파일을 제외
-    "*.config.js" // tailwind 설정 파일을 제외
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
