@@ -18,11 +18,7 @@
     {
       "files": ["**/?(*.)+(spec|test).[jt]s?(x)"],
       "plugins": ["jest", "jest-dom", "testing-library"],
-      "extends": [
-        "plugin:jest/recommended",
-        "plugin:jest-dom/recommended",
-        "plugin:testing-library/react"
-      ]
+      "extends": ["plugin:jest/recommended", "plugin:jest-dom/recommended", "plugin:testing-library/react"]
     },
     {
       "files": ["**/?(*.)+(stories).[jt]s?(x)"],
@@ -34,7 +30,8 @@
   "rules": {
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-explicit-any": "error",
-    "testing-library/no-await-sync-events": ["off", { "eventModules": ["fire", "user"] }]
+    "testing-library/no-await-sync-events": ["off", { "eventModules": ["fire", "user"] }],
+    "react/react-in-jsx-scope": "off"
   },
   "settings": {
     "react": {
