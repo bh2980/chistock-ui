@@ -58,7 +58,7 @@ export const buttonVariants = tv({
     {
       color: "primary",
       variant: "filled",
-      className: "bg-primary text-primary-on",
+      className: "bg-error text-primary-on",
     },
     {
       color: "primary",
