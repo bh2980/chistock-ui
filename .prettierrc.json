@@ -1,0 +1,21 @@
+{
+  "printWidth": 120,
+  "tabWidth": 2,
+  "semi": true,
+  "bracketSameLine": false,
+  "singleQuote": false,
+  "endOfLine": "lf",
+  "importOrder": [
+    "^@customTypes/(.*)$",
+    "^@src/(.*)$",
+    "^@assets/(.*)$",
+    "^@constants/(.*)$",
+    "^@utils/(.*)$",
+    "^@atoms/(.*)$",
+    "^@molecules/(.*)$",
+    "^@charts/(.*)$",
+    "^[./]"
+  ],
+  "importOrderSortSpecifiers": true,
+  "plugins": ["@trivago/prettier-plugin-sort-imports"]
+}

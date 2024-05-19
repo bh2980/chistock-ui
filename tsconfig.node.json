@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "skipLibCheck": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@atoms/*": ["./components/atoms/*"],
+      "@molecules/*": ["./components/molecules/*"],
+      "@charts/*": ["./components/charts/*"],
+      "@assets/*": ["./assets/*"],
+      "@constants/*": ["./constants/*"],
+      "@customTypes/*": ["./customTypes/*"],
+      "@contexts/*": ["./contexts/*"],
+      "@hooks/*": ["./hooks/*"],
+      "@utils/*": ["./utils/*"],
+      "@src/*": ["./*"]
+    },
+    "types": ["@testing-library/jest-dom"]
+  },
+  "include": ["vite.config.ts"]
+}
