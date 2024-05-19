@@ -1,5 +1,6 @@
 {
   "name": "chistock-ui",
+  "license": "MIT",
   "private": false,
   "version": "0.1.1",
   "type": "module",
@@ -26,8 +27,7 @@
     "test": "jest --passWithNoTests",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build && npm run",
-    "tailwind": "npx tailwindcss -o ./dist/index.css --minify"
+    "build-storybook": "storybook build && npm run"
   },
   "dependencies": {
     "d3": "^7.9.0",
