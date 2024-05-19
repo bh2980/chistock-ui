@@ -1,6 +1,6 @@
 ---
-name: Bug, Refactor
-about: 버그, 리팩토링 이슈 템플릿
+name: Bug
+about: 버그 이슈 템플릿
 title: ""
 labels: "🐛 Bug"
 assignees: ""
