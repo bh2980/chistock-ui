@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { useEffect, useState } from "react";
-import React from "react";
 import StockPrice from "./StockPrice";
 
 const meta = {

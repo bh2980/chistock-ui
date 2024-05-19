@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import React from "react";
 import Icon from "@atoms/Icon";
 import TextField from "./TextField";
 

@@ -1,4 +1,3 @@
-import React from "react";
 import { getRelativeTime } from "@utils/getRelativeTime";
 import Image, { type ImageProps } from "@atoms/Image";
 import InteractionState, { interactionStateVariants } from "@atoms/InteractionState";
@@ -17,15 +16,8 @@ const ImageNewsItem = ({
   className,
   ...props
 }: ImageNewsItmeProps) => {
-  const {
-    root,
-    newsItemWrapper,
-    newsInfoWrapper,
-    categoryText,
-    sourceDateWrapper,
-    titleText,
-    contentText,
-  } = imageNewsItemVariants();
+  const { root, newsItemWrapper, newsInfoWrapper, categoryText, sourceDateWrapper, titleText, contentText } =
+    imageNewsItemVariants();
 
   return (
     <a className={root({ className: interactionStateVariants({ className }) })} {...props}>
@@ -47,9 +39,7 @@ const ImageNewsItem = ({
 };
 
 const NewsImage = (props: Omit<ImageProps, "className">) => {
-  return (
-    <Image {...props} className="absolute w-full h-full hover:scale-125 transition-transform" />
-  );
+  return <Image {...props} className="absolute w-full h-full hover:scale-125 transition-transform" />;
 };
 
 ImageNewsItem.Image = NewsImage;

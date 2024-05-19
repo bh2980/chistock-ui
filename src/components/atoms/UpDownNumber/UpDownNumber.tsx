@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import type { UpDownNumberProps } from "./UpDownNumber.types";
 
 export const UpDownNumber = ({ number }: UpDownNumberProps) => {

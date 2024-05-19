@@ -1,5 +1,3 @@
-import React from "react";
-
 /**
  * interactionState class를 가지고 있는 div입니다.
  *

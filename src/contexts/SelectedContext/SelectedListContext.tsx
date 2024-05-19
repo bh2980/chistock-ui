@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useReducer } from "react";
 import type { SelectedListContextType, SelectedListProviderProps } from "./SelectedList.types";
 import SelectedListReducer from "./SelectedListReducers";
 
@@ -8,11 +8,7 @@ const SelectedListContext = createContext<SelectedListContextType>({
   dispatchSelectedList: () => {},
 });
 
-const SelectedListProvider = ({
-  children,
-  defaultSelected,
-  multiSelect,
-}: SelectedListProviderProps) => {
+const SelectedListProvider = ({ children, defaultSelected, multiSelect }: SelectedListProviderProps) => {
   const initSelectedList = defaultSelected
     ? Array.isArray(defaultSelected)
       ? defaultSelected

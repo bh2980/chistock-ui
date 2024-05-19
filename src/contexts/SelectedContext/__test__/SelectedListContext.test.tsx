@@ -1,5 +1,4 @@
 import { act, renderHook } from "@testing-library/react";
-import React from "react";
 import { SelectedListProvider, useSelectedListContext } from "../SelectedListContext";
 
 describe("SelectedListContext 테스트", () => {
@@ -13,9 +12,7 @@ describe("SelectedListContext 테스트", () => {
 
   it("defaultSelected이 문자열일 경우 초기값이 설정되어야 합니다.", () => {
     const { result } = renderHook(() => useSelectedListContext(), {
-      wrapper: ({ children }) => (
-        <SelectedListProvider defaultSelected={"1"}>{children}</SelectedListProvider>
-      ),
+      wrapper: ({ children }) => <SelectedListProvider defaultSelected={"1"}>{children}</SelectedListProvider>,
     });
 
     expect(result.current.selectedList).toEqual(["1"]);
@@ -23,9 +20,7 @@ describe("SelectedListContext 테스트", () => {
 
   it("defaultSelected이 배열일 경우 초기값이 설정되어야 합니다.", () => {
     const { result } = renderHook(() => useSelectedListContext(), {
-      wrapper: ({ children }) => (
-        <SelectedListProvider defaultSelected={["1", "2"]}>{children}</SelectedListProvider>
-      ),
+      wrapper: ({ children }) => <SelectedListProvider defaultSelected={["1", "2"]}>{children}</SelectedListProvider>,
     });
 
     expect(result.current.selectedList).toEqual(["1", "2"]);
@@ -69,9 +64,7 @@ describe("SelectedListContext 테스트", () => {
 
   it("multiSelect이 true인 경우, dispatchSelectedList 함수가 동작하여 상태가 변경되어야 합니다.", () => {
     const { result } = renderHook(() => useSelectedListContext(), {
-      wrapper: ({ children }) => (
-        <SelectedListProvider multiSelect>{children}</SelectedListProvider>
-      ),
+      wrapper: ({ children }) => <SelectedListProvider multiSelect>{children}</SelectedListProvider>,
     });
 
     act(() => {

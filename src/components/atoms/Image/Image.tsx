@@ -1,4 +1,3 @@
-import React from "react";
 import { imageVariants, wrapperVariants } from "./Image.styles";
 import { ImageProps } from "./Image.types";
 

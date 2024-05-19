@@ -1,4 +1,3 @@
-import React from "react";
 import { Else, If, Then } from "react-if";
 import { getFormatNumber } from "@utils/getFormatNumber";
 import UpDownNumber from "@atoms/UpDownNumber";
@@ -17,16 +16,14 @@ const StockPrice = ({
 
   return (
     <div className={`flex whitespace-pre ${className}`} {...props}>
-      {Array.from(getFormatNumber({ number: price, decimalPoint, prefix, postfix })).map(
-        (str, i) => (
-          <If condition={animated && isNumber(str)} key={`sp-${i}`}>
-            <Then>
-              <UpDownNumber number={Number(str)} />
-            </Then>
-            <Else>{str}</Else>
-          </If>
-        ),
-      )}
+      {Array.from(getFormatNumber({ number: price, decimalPoint, prefix, postfix })).map((str, i) => (
+        <If condition={animated && isNumber(str)} key={`sp-${i}`}>
+          <Then>
+            <UpDownNumber number={Number(str)} />
+          </Then>
+          <Else>{str}</Else>
+        </If>
+      ))}
     </div>
   );
 };

@@ -1,4 +1,3 @@
-import React from "react";
 import Slot from "@atoms/Slot/Slot";
 import { labelVariants } from "./Label.styles";
 import type { LabelProps } from "./Label.types";

@@ -1,4 +1,3 @@
-import React from "react";
 import Button, { type ButtonProps } from "../Button";
 import { floatingButtonVariant } from "./FloatingButton.styles";
 import type { FloatingButtonProps } from "./FloatingButton.types";

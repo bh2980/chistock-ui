@@ -3,7 +3,6 @@
 /* eslint-disable testing-library/no-container */
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import React from "react";
 import TextField from "..";
 
 describe("TextField", () => {

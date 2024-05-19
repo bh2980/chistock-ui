@@ -1,4 +1,3 @@
-import React from "react";
 import { getFormatNumber } from "@utils/getFormatNumber";
 import Label from "@atoms/Label";
 import type { StockChangeLabelProps } from "./StockChangeLabel.types";

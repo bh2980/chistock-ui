@@ -1,4 +1,3 @@
-import React from "react";
 import InteractionState from "@atoms/InteractionState";
 import Slot from "@atoms/Slot/Slot";
 import toggleButtonVariant from "./ToggleButton.styles";

@@ -1,6 +1,5 @@
 /* eslint-disable testing-library/no-node-access */
 import { render, screen } from "@testing-library/react";
-import React from "react";
 import UpDownNumber from "..";
 
 describe("UpDownNumber Component", () => {

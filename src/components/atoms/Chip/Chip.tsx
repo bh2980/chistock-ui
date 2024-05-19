@@ -1,5 +1,4 @@
 import { SelectedListProvider } from "@contexts/SelectedContext/SelectedListContext";
-import React from "react";
 import InteractionState from "@atoms/InteractionState";
 import Slot from "@atoms/Slot/Slot";
 import chipVariants from "./Chip.styles";

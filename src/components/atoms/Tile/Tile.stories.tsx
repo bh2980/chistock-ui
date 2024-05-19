@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import React from "react";
 import { exceptProperty } from "@utils/exceptProperty";
 import Tile from "../Tile/Tile";
 

@@ -1,10 +1,6 @@
 import { composeStory } from "@storybook/react";
 import { render, screen } from "@testing-library/react";
-import React from "react";
-import Meta, {
-  Negative as NegativeStory,
-  Positive as PositiveStory,
-} from "../FlowStockItem.stories";
+import Meta, { Negative as NegativeStory, Positive as PositiveStory } from "../FlowStockItem.stories";
 
 const Positive = composeStory(PositiveStory, Meta);
 const Negative = composeStory(NegativeStory, Meta);

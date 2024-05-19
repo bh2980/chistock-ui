@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import React from "react";
 import NewsItem from "./NewsItem";
 
 const meta = {

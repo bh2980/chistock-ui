@@ -1,4 +1,3 @@
-import React from "react";
 import { iconPath } from "@constants/iconPath";
 import { iconVariants } from "./Icon.styles";
 import { IconProps } from "./Icon.types";

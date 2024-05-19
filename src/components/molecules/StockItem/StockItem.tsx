@@ -1,4 +1,3 @@
-import React from "react";
 import Divider from "@atoms/Divider/Divider";
 import StockLogo from "@molecules/StockLogo/StockLogo";
 import StockChangeLabel from "../StockChangeLabel";
@@ -15,8 +14,7 @@ import { useStockItem } from "./useStockItem";
 const StockItem = (props: StockItemProps) => {
   const { companyName, ticker } = props;
 
-  const { src, title, subtitle, market, currentPrice, change, tickerAccent, size } =
-    useStockItem(props);
+  const { src, title, subtitle, market, currentPrice, change, tickerAccent, size } = useStockItem(props);
 
   const {
     root,

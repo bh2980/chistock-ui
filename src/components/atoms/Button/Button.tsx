@@ -1,4 +1,3 @@
-import React from "react";
 import InteractionState from "@atoms/InteractionState";
 import Slot from "@atoms/Slot";
 import { buttonVariants } from "./Button.styles";
@@ -8,10 +7,7 @@ import useButton from "./useButton";
 /**
  * 버튼을 표시합니다.
  */
-const Button = <
-  T extends ButtonDefault | ButtonAlterAs = ButtonDefault,
-  A extends ButtonAlterAs = ButtonAlterAs,
->(
+const Button = <T extends ButtonDefault | ButtonAlterAs = ButtonDefault, A extends ButtonAlterAs = ButtonAlterAs>(
   props: ButtonProps<T, A>,
 ) => {
   const { children, styleVariant, ...otherProps } = useButton(props);

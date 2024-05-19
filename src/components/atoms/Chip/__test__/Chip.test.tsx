@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import React from "react";
 import Chip from "../Chip";
 
 describe("Chip 및 ChipGroup 컴포넌트 테스트", () => {

@@ -1,5 +1,4 @@
 import { render, screen } from "@testing-library/react";
-import React from "react";
 import StockLogo from "../StockLogo";
 
 const IMAGE_URL =

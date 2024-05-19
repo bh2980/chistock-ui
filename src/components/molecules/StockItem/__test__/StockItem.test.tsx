@@ -4,7 +4,6 @@
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { render } from "@testing-library/react";
-import React from "react";
 import StockItem from "../StockItem";
 
 const IMAGE_URL =

@@ -1,4 +1,3 @@
-import React from "react";
 import { checkNumType } from "@utils/checkNumType";
 import { getFormatNumber } from "@utils/getFormatNumber";
 import { flowStockItemVariants } from "./FlowStockItem.styles";

@@ -1,6 +1,5 @@
 // TODO Tab Panel 만들기 -> 조건부 렌더링 컴포넌트 개발
 import { SelectedListProvider } from "@contexts/SelectedContext";
-import React from "react";
 import InteractionState from "@atoms/InteractionState";
 import Slot from "@atoms/Slot/Slot";
 import { tabVariant } from "./Tab.styles";

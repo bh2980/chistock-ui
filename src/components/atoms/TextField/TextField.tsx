@@ -1,4 +1,3 @@
-import React from "react";
 import InteractionState from "@atoms/InteractionState";
 import { containerVariants, inputVariants, labelVariants, textFieldVariants } from "./TextField.styles";
 import { TextFieldProps } from "./TextField.types";

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Image from "@atoms/Image";
 import { stockImageVariants, stockLogoVariants } from "./StockLogo.styles";
 import type { StockLogoProps } from "./StockLogo.types";
@@ -15,13 +15,7 @@ const StockLogo = ({ src, alt, ticker, className, ...imageProps }: StockLogoProp
     <div className={stockLogoVariants({ className })} title={alt}>
       {(!src || hasError) && <span className="font-bold">{ticker}</span>}
       {src && (
-        <Image
-          src={src}
-          alt={alt}
-          className={stockImageVariants({ hasError })}
-          onError={handleError}
-          {...imageProps}
-        />
+        <Image src={src} alt={alt} className={stockImageVariants({ hasError })} onError={handleError} {...imageProps} />
       )}
     </div>
   );

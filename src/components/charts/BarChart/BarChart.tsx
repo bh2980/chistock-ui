@@ -1,5 +1,4 @@
 import { max, scaleBand, scaleLinear } from "d3";
-import React from "react";
 import { isEven } from "@utils/isEven";
 import { barChartVariants } from "./BarChart.styles";
 import { BandAxisProps, BarChartProps, BarProps } from "./BarChart.types";

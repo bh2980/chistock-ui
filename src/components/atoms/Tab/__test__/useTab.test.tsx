@@ -1,6 +1,5 @@
 import { SelectedListProvider } from "@contexts/SelectedContext";
 import { renderHook } from "@testing-library/react";
-import React from "react";
 import { useTab, useTabList } from "../useTabList";
 
 describe("useTab", () => {

@@ -1,5 +1,4 @@
 import { render, screen } from "@testing-library/react";
-import React from "react";
 import Divider from "@atoms/Divider/Divider";
 import List from "../List";
 
