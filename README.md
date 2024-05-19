@@ -1,30 +1,36 @@
-# React + TypeScript + Vite
+![Group 251](https://github.com/bh2980/chistock-ui/assets/74360958/cafaf5ef-db72-4ce1-9e8c-ee9d584a224a)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+chistock-ui는 chistock을 위한 디자인 시스템 라이브러리입니다.  
+<br/>
 
-Currently, two official plugins are available:
+- [ ] 디자인 시스템과 스토리북을 통한 CDD 프론트엔드 개발
+- [ ] D3.js 혹은 SVG를 이용한 데이터 시각화
+- [ ] 테스트 라이브러리들을 이용한 테스트 코드 작성
+- [ ] NPM 라이브러리 배포
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<br/>
+를 목표로 삼아 개발했습니다.
 
-## Expanding the ESLint configuration
+<br/><br/>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 관련 사이트
 
-- Configure the top-level `parserOptions` property like this:
+- 📕 Storybook - 준비 중
+- 🗒️ [Notion](https://bh2980.notion.site/chistock-ui-4e9b7bbd072d4ca49216d812c722422d?pvs=4)
+- 🚀 [NPM 배포 사이트](https://www.npmjs.com/package/chistock-ui)
+- 📈 [chistock으로 이동](https://github.com/bh2980/chistock)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+<br/>
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## 기술 스택
+
+<img src="https://img.shields.io/badge/vite-646CFF?style=for-the-badge&logo=vite&logoColor=white"> <img src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"> <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">
+
+<img src="https://img.shields.io/badge/tailwind-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white"> <img src="https://img.shields.io/badge/tailwind variants-000000?style=for-the-badge&logo=tailwindvariants&logoColor=white"> 
+
+<img src="https://img.shields.io/badge/d3-F9A03C?style=for-the-badge&logo=d3.js&logoColor=white"> 
+
+<img src="https://img.shields.io/badge/storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white"> <img src="https://img.shields.io/badge/chromatic-FC521F?style=for-the-badge&logo=chromatic&logoColor=white"> <img src="https://img.shields.io/badge/jest-C21325?style=for-the-badge&logo=jest&logoColor=white"> <img src="https://img.shields.io/badge/react testing library-E33332?style=for-the-badge&logo=testinglibrary&logoColor=white"> 
+
+
+<br/>
