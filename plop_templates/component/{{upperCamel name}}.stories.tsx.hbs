@@ -1,0 +1,18 @@
+import type { Meta, StoryObj } from "@storybook/react";
+import {{upperCamel name}} from "./{{upperCamel name}}";
+
+const meta = {
+  title: "{{category}}/{{upperCamel name}}",
+  component: {{upperCamel name}},
+  parameters: {
+    layout: "centered",
+  },
+  tags: ["autodocs"],
+} satisfies Meta<typeof {{upperCamel name}}>;
+
+export default meta;
+type Story = StoryObj<typeof {{upperCamel name}}>;
+
+export const Default: Story = {
+  render: () => <{{upperCamel name}} />,
+};
