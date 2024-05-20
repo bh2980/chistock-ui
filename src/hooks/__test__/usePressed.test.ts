@@ -1,4 +1,5 @@
 import { act, renderHook } from "@testing-library/react";
+import { describe, expect, it, vi } from "vitest";
 import usePressed from "../usePressed";
 
 describe("usePressed", () => {
@@ -29,7 +30,7 @@ describe("usePressed", () => {
   });
 
   it("onClick 함수가 주어진 경우 버튼 클릭 시 호출되어야 합니다.", () => {
-    const onClickMock = jest.fn();
+    const onClickMock = vi.fn();
     const { result } = renderHook(() => usePressed(false, { onClick: onClickMock }));
 
     act(() => {

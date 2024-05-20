@@ -3,7 +3,8 @@
 /* eslint-disable testing-library/no-container */
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import TextField from "..";
+import { describe, expect, it, vi } from "vitest";
+import TextField from "../TextField";
 
 describe("TextField", () => {
   // normal rendering
@@ -32,7 +33,7 @@ describe("TextField", () => {
   });
 
   it("value를 prosp로 받아 렌더링해야합니다.", () => {
-    const onChange = jest.fn();
+    const onChange = vi.fn();
     render(<TextField value="VALUE" onChange={onChange} />);
 
     const input = screen.getByRole("textbox") as HTMLInputElement;
@@ -100,7 +101,7 @@ describe("TextField", () => {
   });
 
   it("onChange 함수를 props로 받아 typeing 시 실행해야합니다.", async () => {
-    const onChange = jest.fn();
+    const onChange = vi.fn();
     render(<TextField onChange={onChange} />);
 
     const input = screen.getByRole("textbox") as HTMLInputElement;
