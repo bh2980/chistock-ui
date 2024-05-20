@@ -3,7 +3,7 @@ import { exceptProperty } from "@utils/exceptProperty";
 import Tile from "../Tile/Tile";
 
 const meta = {
-  title: "Atom/Tile/Tile",
+  title: "atoms/Tile/Tile",
   component: Tile,
   parameters: {
     layout: "centered",

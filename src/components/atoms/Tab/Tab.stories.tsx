@@ -3,7 +3,7 @@ import Icon from "@atoms/Icon";
 import Tab from "./Tab";
 
 const meta = {
-  title: "Atom/TabList",
+  title: "atoms/TabList",
   component: Tab,
   parameters: {
     layout: "centered",

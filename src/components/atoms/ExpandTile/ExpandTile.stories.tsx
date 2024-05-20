@@ -3,7 +3,7 @@ import { exceptProperty } from "@utils/exceptProperty";
 import ExpandTile from "../ExpandTile/ExpandTile";
 
 const meta = {
-  title: "Atom/Tile/ExpandTile",
+  title: "atoms/Tile/ExpandTile",
   component: ExpandTile,
   parameters: {
     layout: "centered",

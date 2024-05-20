@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Label from "./Label";
 
 const meta = {
-  title: "Atom/Label",
+  title: "atoms/Label",
   component: Label,
   parameters: {
     layout: "centered",

@@ -4,7 +4,7 @@ import Divider from "@atoms/Divider/Divider";
 import List from "./List";
 
 const meta = {
-  title: "Atom/List",
+  title: "atoms/List",
   component: List,
   parameters: {
     layout: "centered",

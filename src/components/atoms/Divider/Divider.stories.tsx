@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Divider from "./Divider";
 
 const meta = {
-  title: "Atom/Divider",
+  title: "atoms/Divider",
   component: Divider,
   parameters: {
     layout: "centered",

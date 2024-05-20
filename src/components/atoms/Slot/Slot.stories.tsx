@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Slot from "./Slot";
 
 const meta = {
-  title: "Atom/Slot",
+  title: "atoms/Slot",
   component: Slot,
   parameters: {
     layout: "centered",
