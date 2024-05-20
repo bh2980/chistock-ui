@@ -1,0 +1,8 @@
+import { {{upperCamel name}}Variants } from "./{{upperCamel name}}.styles";
+import { {{upperCamel name}}Props } from "./{{upperCamel name}}.types";
+
+const {{upperCamel name}} = ({ className, ...props }: {{upperCamel name}}Props) => {
+  return <{{tag}} className={ {{upperCamel name}}Variants({ className })} {...props}></{{tag}}>;
+};
+
+export default {{upperCamel name}};
