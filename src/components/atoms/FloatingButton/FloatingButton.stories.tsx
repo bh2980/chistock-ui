@@ -3,7 +3,7 @@ import { exceptProperty } from "@utils/exceptProperty";
 import FloatingButton from "./FloatingButton";
 
 const meta = {
-  title: "Atom/Button/FloatingButton",
+  title: "atoms/Button/FloatingButton",
   component: FloatingButton,
   parameters: {
     layout: "centered",

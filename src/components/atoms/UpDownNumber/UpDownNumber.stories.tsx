@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import UpDownNumber from "./UpDownNumber";
 
 const meta = {
-  title: "Atom/UpDownNumber",
+  title: "atoms/UpDownNumber",
   component: UpDownNumber,
   parameters: {
     layout: "centered",

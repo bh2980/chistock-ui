@@ -1,3 +1,5 @@
-import { ComponentPropsWithInnerRef } from "@customTypes/utilType";
+import type { VariantProps } from "tailwind-variants";
+import type { ComponentPropsWithInnerRef } from "@customTypes/utilType";
+import { {{upperCamel name}}Variants } from "./{{upperCamel name}}.styles";
 
-export type {{upperCamel name}}Props = ComponentPropsWithInnerRef<"{{tag}}">;
+export type {{upperCamel name}}Props = ComponentPropsWithInnerRef<"{{tag}}"> & VariantProps<typeof {{upperCamel name}}Variants>;

@@ -3,7 +3,7 @@ import Icon from "@atoms/Icon";
 import ToggleButton from "./ToggleButton";
 
 const meta = {
-  title: "Atom/Button/ToggleButton",
+  title: "atoms/Button/ToggleButton",
   component: ToggleButton,
   parameters: {
     layout: "centered",

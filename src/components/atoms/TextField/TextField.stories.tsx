@@ -3,7 +3,7 @@ import Icon from "@atoms/Icon";
 import TextField from "./TextField";
 
 const meta = {
-  title: "Atom/TextField",
+  title: "atoms/TextField",
   component: TextField,
   parameters: {
     layout: "centered",
