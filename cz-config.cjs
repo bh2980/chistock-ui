@@ -25,7 +25,6 @@ module.exports = {
       name: "⚡ pref     | 성능 개선 코드",
     },
   ],
-  allowCustomScopes: false,
   scopes: [
     {
       value: "component",
@@ -72,6 +71,10 @@ module.exports = {
       name: "package         : 패키지 관련",
     },
     {
+      value: "BREAKING",
+      name: "BREAKING        : !!!!!BREAKING CHANGE!!!!!",
+    },
+    {
       value: "formatting",
       name: "formatting      : 포맷팅 관련",
     },
@@ -111,7 +114,9 @@ module.exports = {
     footer: "이 변경사항으로 해결된 이슈가 있다면 나열하세요 (선택 사항). 예: #31, #34:\n",
     confirmCommit: "위의 커밋을 진행하시겠습니까?",
   },
+  allowCustomScopes: false,
   allowBreakingChanges: ["feat", "fix"],
   skipQuestions: ["body"],
   subjectLimit: 100,
+  footerPrefix: "ISSUES CLOSED:",
 };
