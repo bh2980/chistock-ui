@@ -27,7 +27,8 @@
     "test": "jest --passWithNoTests",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "plop": "plop"
   },
   "dependencies": {
     "d3": "^7.9.0",
