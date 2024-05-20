@@ -1,5 +1,6 @@
 import { SelectedListProvider } from "@contexts/SelectedContext";
 import { renderHook } from "@testing-library/react";
+import { describe, expect, it } from "vitest";
 import { useTab, useTabList } from "../useTabList";
 
 describe("useTab", () => {

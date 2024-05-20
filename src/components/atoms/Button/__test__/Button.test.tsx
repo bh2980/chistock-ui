@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { describe, expect, it, vi } from "vitest";
 import Button from "..";
 
 describe("Button", () => {
@@ -23,7 +24,7 @@ describe("Button", () => {
     });
 
     it("space 키로 onClick 함수를 실행해야합니다.", async () => {
-      const onClick = jest.fn();
+      const onClick = vi.fn();
 
       render(<Button onClick={onClick}>Button</Button>);
       const button = screen.getByRole("button");
@@ -37,7 +38,7 @@ describe("Button", () => {
     });
 
     it("enter 키로 onClick 함수를 실행해야합니다.", async () => {
-      const onClick = jest.fn();
+      const onClick = vi.fn();
 
       render(<Button onClick={onClick}>Button</Button>);
       const button = screen.getByRole("button");
@@ -51,7 +52,7 @@ describe("Button", () => {
     });
 
     it("click 시 onClick 함수를 실행해야합니다.", async () => {
-      const onClick = jest.fn();
+      const onClick = vi.fn();
 
       render(<Button onClick={onClick}>Button</Button>);
       const button = screen.getByRole("button");
@@ -82,7 +83,7 @@ describe("Button", () => {
     });
 
     it("disabled시 click이 불가능해야합니다.", async () => {
-      const onClick = jest.fn();
+      const onClick = vi.fn();
 
       render(
         <Button onClick={onClick} disabled>
@@ -133,7 +134,7 @@ describe("Button", () => {
     });
 
     it("space 키로 onClick 함수를 실행해야합니다.", async () => {
-      const onClick = jest.fn();
+      const onClick = vi.fn();
 
       render(
         <Button renderAs="a" onClick={onClick}>
@@ -151,7 +152,7 @@ describe("Button", () => {
     });
 
     it("enter 키로 onClick 함수를 실행해야합니다.", async () => {
-      const onClick = jest.fn();
+      const onClick = vi.fn();
 
       render(
         <Button renderAs="a" onClick={onClick}>
@@ -169,7 +170,7 @@ describe("Button", () => {
     });
 
     it("click 시 onClick 함수를 실행해야합니다.", async () => {
-      const onClick = jest.fn();
+      const onClick = vi.fn();
 
       render(
         <Button renderAs="a" onClick={onClick}>
@@ -201,7 +202,7 @@ describe("Button", () => {
     });
 
     it("disabled시 click이 불가능해야합니다.", async () => {
-      const onClick = jest.fn();
+      const onClick = vi.fn();
 
       render(
         <Button renderAs="a" onClick={onClick} disabled>

@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { describe, expect, it, vi } from "vitest";
 import Chip from "../Chip";
 
 describe("Chip 및 ChipGroup 컴포넌트 테스트", () => {
@@ -80,8 +81,8 @@ describe("Chip 및 ChipGroup 컴포넌트 테스트", () => {
   });
 
   it("ChipGroup에 Chip을 추가하고 Chip을 클릭 시 클릭 이벤트가 올바르게 전달되어야 합니다.", async () => {
-    const handleClick = jest.fn();
-    const handleClick2 = jest.fn();
+    const handleClick = vi.fn();
+    const handleClick2 = vi.fn();
     render(
       <Chip.ChipGroup>
         <Chip value="1" onClick={handleClick}>

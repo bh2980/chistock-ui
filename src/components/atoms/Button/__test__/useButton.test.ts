@@ -1,4 +1,5 @@
 import { renderHook } from "@testing-library/react";
+import { describe, expect, it, vi } from "vitest";
 import { type ButtonAlterAs, type ButtonDefault, type ButtonProps, useButton } from "..";
 
 describe("useButton 함수 테스트", () => {
@@ -39,7 +40,7 @@ describe("useButton 함수 테스트", () => {
   });
 
   it("renderAs가 'a'이고 disabled가 false일 때, onClick이 원래의 onClick함수를 가져야합니다.", () => {
-    const onClick = jest.fn();
+    const onClick = vi.fn();
     const props = { renderAs: "a" as const, disabled: false, onClick };
     const { result } = renderHook(() => useButton(props));
 
@@ -47,7 +48,7 @@ describe("useButton 함수 테스트", () => {
   });
 
   it("renderAs가 'a'이고 disabled가 true일 때, onClick이 undefined가 되어야합니다.", () => {
-    const props = { renderAs: "a" as const, disabled: true, onClick: jest.fn() };
+    const props = { renderAs: "a" as const, disabled: true, onClick: vi.fn() };
     const { result } = renderHook(() => useButton(props));
 
     expect(result.current.onClick).toBeUndefined();
@@ -56,9 +57,7 @@ describe("useButton 함수 테스트", () => {
   it("otherProps가 정의되었을 때, 결과 객체에 otherProps가 포함되어야합니다.", () => {
     const otherProps = { dataTestId: "test" };
     const props = { ...otherProps };
-    const { result } = renderHook(() =>
-      useButton(props as ButtonProps<ButtonDefault, ButtonAlterAs>),
-    );
+    const { result } = renderHook(() => useButton(props as ButtonProps<ButtonDefault, ButtonAlterAs>));
 
     expect(result.current).toHaveProperty("dataTestId", "test");
   });

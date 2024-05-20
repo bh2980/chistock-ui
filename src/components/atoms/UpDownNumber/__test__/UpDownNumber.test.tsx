@@ -1,6 +1,7 @@
 /* eslint-disable testing-library/no-node-access */
 import { render, screen } from "@testing-library/react";
-import UpDownNumber from "..";
+import { describe, expect, it } from "vitest";
+import UpDownNumber from "../UpDownNumber";
 
 describe("UpDownNumber Component", () => {
   it("renders without errors", () => {
