@@ -30,13 +30,22 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "plop": "plop",
-    "prepare": "husky"
+    "prepare": "husky",
+    "commit": "cz"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
       "eslint --fix",
       "prettier --write"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./cz-config.cjs"
+    }
   },
   "dependencies": {
     "d3": "^7.9.0",
@@ -67,6 +76,8 @@
     "@vitejs/plugin-react": "^4.2.1",
     "@vitest/ui": "^1.6.0",
     "autoprefixer": "^10.4.19",
+    "commitizen": "^4.3.0",
+    "cz-customizable": "^7.0.0",
     "eslint": "^8.47.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-jest-dom": "^5.4.0",
