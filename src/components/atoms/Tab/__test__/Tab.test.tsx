@@ -3,6 +3,7 @@
 /* eslint-disable testing-library/no-container */
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { describe, expect, it, vi } from "vitest";
 import Tab from "../Tab";
 
 describe("Tab", () => {
@@ -47,7 +48,7 @@ describe("Tab", () => {
   });
 
   it("click 시 기존 onClick 함수 실행", async () => {
-    const onClick = jest.fn();
+    const onClick = vi.fn();
 
     render(<Tab value="tab1" onClick={onClick} />, {
       wrapper: (props) => <Tab.TabList defaultSelected="" {...props} />,

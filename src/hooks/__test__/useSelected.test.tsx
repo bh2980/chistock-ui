@@ -3,6 +3,7 @@ import { SelectedListProvider } from "@contexts/SelectedContext/SelectedListCont
 import useSelectedList from "@hooks/useSelected";
 import { act, renderHook } from "@testing-library/react";
 import React from "react";
+import { describe, expect, it, vi } from "vitest";
 
 describe("useSelectedList 훅 테스트", () => {
   const createWrapper = (options = {}) => {
@@ -30,7 +31,7 @@ describe("useSelectedList 훅 테스트", () => {
   });
 
   it("onClick prop이 있는 경우, Chip 클릭 시 해당 함수가 호출되어야 합니다.", () => {
-    const handleClick = jest.fn();
+    const handleClick = vi.fn();
     const wrapper = createWrapper();
     const { result } = renderHook(() => useSelectedList({ value: "1", onClick: handleClick }), {
       wrapper,
@@ -41,9 +42,7 @@ describe("useSelectedList 훅 테스트", () => {
       result.current.onClick({ currentTarget: { value: "1" } });
     });
 
-    expect(handleClick).toHaveBeenCalledWith(
-      expect.objectContaining({ currentTarget: { value: "1" } }),
-    );
+    expect(handleClick).toHaveBeenCalledWith(expect.objectContaining({ currentTarget: { value: "1" } }));
   });
 
   it("styleVariant이 정상적으로 반환되어야 합니다.", () => {

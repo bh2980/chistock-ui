@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import ToggleButton from "..";
+import { describe, expect, it, vi } from "vitest";
+import ToggleButton from "../ToggleButton";
 
 describe("ToggleButton", () => {
   it("에러 없이 정상적으로 렌더링되어야 합니다.", () => {
@@ -28,7 +29,7 @@ describe("ToggleButton", () => {
   });
 
   it("버튼을 click 시 aria-pressed가 true로 변경되어야합니다.", async () => {
-    const onClick = jest.fn();
+    const onClick = vi.fn();
     render(<ToggleButton onClick={onClick}>버튼</ToggleButton>);
 
     const button = screen.getByRole("button");
@@ -41,7 +42,7 @@ describe("ToggleButton", () => {
   });
 
   it("버튼을 click 후 다시 click 시 aria-pressed가 false로 변경되어야합니다.", async () => {
-    const onClick = jest.fn();
+    const onClick = vi.fn();
     render(<ToggleButton onClick={onClick}>버튼</ToggleButton>);
 
     const button = screen.getByRole("button");

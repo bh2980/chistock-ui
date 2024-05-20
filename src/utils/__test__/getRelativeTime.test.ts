@@ -1,7 +1,8 @@
+import { describe, expect, it, vi } from "vitest";
 import { getRelativeTime } from "@utils/getRelativeTime";
 
 describe("getRelativeTime", () => {
-  jest.useFakeTimers().setSystemTime(new Date("2020-01-01"));
+  vi.useFakeTimers().setSystemTime(new Date("2020-01-01"));
 
   it("1시간 미만이라면 방금 전", () => {
     const result = getRelativeTime(Date.now() - 1000 * 60 * 60 + 1);
