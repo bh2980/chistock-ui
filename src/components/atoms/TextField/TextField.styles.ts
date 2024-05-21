@@ -35,9 +35,7 @@ export const textFieldVariants = tv({
   ],
   variants: {
     focus: {
-      true: [
-        "interactionFocus:opacity-0, interactionFocusVisible:opacity-0, focus-within:border-none, focus-visible:border-none",
-      ],
+      true: "interactionFocus:opacity-0, interactionFocusVisible:opacity-0, focus-within:border-none, focus-visible:border-none",
     },
     error: {
       true: ["bg-error-container", "border-error", "!outline-error", "font-bold"],
