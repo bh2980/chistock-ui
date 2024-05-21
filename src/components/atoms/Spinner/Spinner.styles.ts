@@ -1,6 +1,7 @@
 import { tv } from "@utils/customTV";
 
 export const SpinnerVariants = tv({
+  base: "h-fit",
   variants: {
     size: {
       sm: "w-[96rem]",
