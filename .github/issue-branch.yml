@@ -1,4 +1,4 @@
-branchName: "chistock-#${issue.number}"
+branchName: "chistockUI-#${issue.number}"
 autoCloseIssue: true
 branches:
   - label: 🐛 Bug
