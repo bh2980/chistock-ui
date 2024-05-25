@@ -8,7 +8,6 @@ import { describe, expect, it } from "vitest";
 import StockChangeLabel from "../StockChangeLabel";
 
 describe("StockChangeLabel", () => {
-  // eslint-disable-next-line jest/expect-expect
   it("에러 없이 렌더링", () => {
     render(<StockChangeLabel change={5} data-testid="stock-change-label" />);
   });
