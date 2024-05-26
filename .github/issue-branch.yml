@@ -2,9 +2,9 @@ branchName: "chistockUI-#${issue.number}"
 autoCloseIssue: true
 branches:
   - label: 🐛 Bug
-    prefix: bugfix/
+    prefix: fix/
   - label: 🩹 Simple Fix
-    prefix: bugfix/
+    prefix: fix/
   - label: 🚨 HOTFIX
     prefix: hotfix/
   - label: 👷 CI
@@ -16,8 +16,8 @@ branches:
   - label: ✨ Feature
     prefix: feature/
   - label: ♻️ Refactor
-    prefix: feature/
+    prefix: refactor/
   - label: ✅ Test
-    prefix: feature/
+    prefix: test/
   - label: 📝 Document
     prefix: docs/
