@@ -1,31 +1,7 @@
 import { max, scaleBand, scaleLinear } from "d3";
-import { isEven } from "@utils/isEven";
+import BandAxis from "@charts/BandAxis";
 import { barChartVariants } from "./BarChart.styles";
-import { BandAxisProps, BarChartProps, BarProps } from "./BarChart.types";
-
-//TODO 추후 BandAxis를 별도의 컴포넌트로 분리
-//useAxis가 필요할지도
-const BandAxis = ({ xScale, outerTickLength = 6, innerTickLength = 6, ...props }: BandAxisProps) => {
-  const [startPoint, endPoint] = xScale.range();
-  const tickCount = xScale.domain().length;
-
-  const tickStartPoint =
-    (endPoint - startPoint) / 2 - xScale.step() * (isEven(tickCount) ? tickCount / 2 - 0.5 : Math.floor(tickCount / 2));
-
-  return (
-    <g {...props}>
-      <path fill="none" d={`M${startPoint},${outerTickLength}V0H${endPoint}V${outerTickLength}`}></path>
-      {xScale.domain().map((label, i) => (
-        <g key={`tick-${i}`} transform={`translate(${tickStartPoint + xScale.step() * i}, 0)`}>
-          <line y2={innerTickLength} fill="none" />
-          <text y="24" stroke="none">
-            {label}
-          </text>
-        </g>
-      ))}
-    </g>
-  );
-};
+import type { BarChartProps, BarProps } from "./BarChart.types";
 
 //TODO useBar를 통한 속성 제어가 필요할지도?
 //useBar가 있으면 nullBarHeight를 별도로 제공해줄 필요가 없을수도?
@@ -113,12 +89,7 @@ const BarChart = ({ width, height, data, padding = 0.5 }: BarChartProps) => {
           />
         );
       })}
-      <BandAxis
-        xScale={xScale}
-        textAnchor="middle"
-        transform={`translate(0, ${height - margin.y})`}
-        className={xAxis()}
-      />
+      <BandAxis axisScale={xScale} transform={`translate(0, ${height - margin.y})`} className={xAxis()} lineHide />
     </svg>
   );
 };
