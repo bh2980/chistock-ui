@@ -11,6 +11,7 @@ type BandAxisBaseProps = {
   innerTickLength?: number;
   orient?: AxisOrient;
   labelHide?: boolean;
+  lineHide?: boolean;
 };
 
 export type BandAxisProps = Omit<ComponentPropsWithInnerRef<"g">, "textAnchor"> &
