@@ -8,6 +8,7 @@ type BandAxisBaseProps = {
   outerTickLength?: number;
   innerTickLength?: number;
   direction?: "UP" | "DOWN" | "RIGHT" | "LEFT";
+  labelHide?: boolean;
 };
 
 export type BandAxisProps = ComponentPropsWithInnerRef<"g"> & VariantProps<typeof BandAxisVariants> & BandAxisBaseProps;

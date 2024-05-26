@@ -31,7 +31,7 @@ const xScale = scaleBand()
 export const Default: Story = {
   render: () => (
     <svg width={256} height={256}>
-      <BandAxis axisScale={xScale} textAnchor="middle" transform="translate(0, 128)" />
+      <BandAxis axisScale={xScale} transform="translate(0, 128)" />
     </svg>
   ),
 };
@@ -40,11 +40,27 @@ export const Direction: Story = {
   render: () => (
     <svg width={512} height={256}>
       <g transform="translate(128, 0)">
-        <BandAxis axisScale={xScale} direction="UP" textAnchor="middle" transform="translate(0, 32)" />
-        <BandAxis axisScale={xScale} direction="DOWN" textAnchor="middle" transform="translate(0, 220)" />
-        <BandAxis axisScale={xScale} direction="RIGHT" textAnchor="middle" transform="translate(280, 0)" />
-        <BandAxis axisScale={xScale} direction="LEFT" textAnchor="middle" transform="translate(-24, 0)" />
+        <BandAxis axisScale={xScale} direction="DOWN" transform="translate(0, 5)" />
+        <BandAxis axisScale={xScale} direction="UP" transform="translate(0, 245)" />
+        <BandAxis axisScale={xScale} direction="RIGHT" transform="translate(280, 0)" />
+        <BandAxis axisScale={xScale} direction="LEFT" transform="translate(-24, 0)" />
       </g>
+    </svg>
+  ),
+};
+
+export const LabelHide: Story = {
+  render: () => (
+    <svg width={256} height={256}>
+      <BandAxis axisScale={xScale} transform="translate(0, 128)" labelHide />
+    </svg>
+  ),
+};
+
+export const LineHide: Story = {
+  render: () => (
+    <svg width={256} height={256}>
+      <BandAxis axisScale={xScale} transform="translate(0, 128)" lineHide />
     </svg>
   ),
 };

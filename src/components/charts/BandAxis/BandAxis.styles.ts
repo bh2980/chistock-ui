@@ -1,5 +1,13 @@
 import { tv } from "@utils/customTV";
 
 export const BandAxisVariants = tv({
-  base: "stroke-black",
+  variants: {
+    lineHide: {
+      true: "stroke-none",
+      false: "stroke-black",
+    },
+  },
+  defaultVariants: {
+    lineHide: false,
+  },
 });
