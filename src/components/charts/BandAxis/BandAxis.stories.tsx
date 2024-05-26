@@ -40,10 +40,10 @@ export const Direction: Story = {
   render: () => (
     <svg width={512} height={256}>
       <g transform="translate(128, 0)">
-        <BandAxis axisScale={xScale} direction="DOWN" transform="translate(0, 5)" />
-        <BandAxis axisScale={xScale} direction="UP" transform="translate(0, 245)" />
-        <BandAxis axisScale={xScale} direction="RIGHT" transform="translate(280, 0)" />
-        <BandAxis axisScale={xScale} direction="LEFT" transform="translate(-24, 0)" />
+        <BandAxis axisScale={xScale} orient="DOWN" transform="translate(0, 5)" />
+        <BandAxis axisScale={xScale} orient="UP" transform="translate(0, 245)" />
+        <BandAxis axisScale={xScale} orient="RIGHT" transform="translate(280, 0)" />
+        <BandAxis axisScale={xScale} orient="LEFT" transform="translate(-24, 0)" />
       </g>
     </svg>
   ),
