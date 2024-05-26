@@ -1,8 +1,8 @@
 import BandAxis from "./BandAxis";
 import { BandAxisVariants } from "./BandAxis.styles";
-import type { BandAxisProps } from "./BandAxis.types";
+import type { AxisOrient, BandAxisProps } from "./BandAxis.types";
 
-export type { BandAxisProps };
+export type { BandAxisProps, AxisOrient };
 
 export { BandAxisVariants };
 
