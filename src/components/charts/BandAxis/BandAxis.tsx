@@ -1,6 +1,5 @@
 import { getAxisOrientConfig } from "@utils/getAxisOrientConfig";
 import { isEven } from "@utils/isEven";
-import { BandAxisVariants } from "./BandAxis.styles";
 import { BandAxisProps } from "./BandAxis.types";
 
 const BandAxis = ({
@@ -10,7 +9,6 @@ const BandAxis = ({
   innerTickLength = 6,
   lineHide,
   labelHide,
-  className,
   ...props
 }: BandAxisProps) => {
   const [startPoint, endPoint] = axisScale.range();
@@ -24,8 +22,8 @@ const BandAxis = ({
   const [textdX, textdY, path] = getAxisOrientConfig({ orient, startPoint, endPoint, outerTickLength });
 
   return (
-    <g className={BandAxisVariants({ className, lineHide })} textAnchor="middle" {...props}>
-      <path fill="none" d={path} />
+    <g textAnchor="middle" {...props}>
+      {!lineHide && <path fill="none" d={path} />}
       {axisScale.domain().map((label, i) => (
         <g
           key={`tick-${i}`}
@@ -35,11 +33,13 @@ const BandAxis = ({
               : `translate(${tickStartPoint + axisScale.step() * i}, 0)`
           }
         >
-          <line
-            x2={isVertical ? innerTickLength : undefined}
-            y2={isVertical ? undefined : innerTickLength}
-            fill="none"
-          />
+          {!lineHide && (
+            <line
+              x2={isVertical ? innerTickLength : undefined}
+              y2={isVertical ? undefined : innerTickLength}
+              fill="none"
+            />
+          )}
           {!labelHide && (
             <text dx={textdX} dy={textdY} stroke="none">
               {label}
