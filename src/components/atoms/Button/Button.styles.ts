@@ -30,7 +30,7 @@ export const buttonVariants = tv({
     size: {
       sm: "h-[32rem] px-sm text-sm gap-xs",
       md: "h-[40rem] px-md text-md gap-sm",
-      lg: "h-[48rem] px-md text-lg gap-sm",
+      lg: "h-[48rem] px-lg text-lg gap-sm",
     },
     rounded: {
       rounded: "rounded-md",
@@ -63,7 +63,7 @@ export const buttonVariants = tv({
     {
       color: "primary",
       variant: "outlined",
-      className: "text-primary",
+      className: "text-primary border-primary",
     },
     {
       color: "primary",
@@ -79,7 +79,7 @@ export const buttonVariants = tv({
     {
       color: "secondary",
       variant: "outlined",
-      className: "text-secondary",
+      className: "text-secondary border-secondary",
     },
     {
       color: "secondary",
@@ -95,7 +95,7 @@ export const buttonVariants = tv({
     {
       color: "danger",
       variant: "outlined",
-      className: "text-error",
+      className: "text-error border-error",
     },
     {
       color: "danger",
