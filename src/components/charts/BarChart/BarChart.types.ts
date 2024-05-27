@@ -11,6 +11,7 @@ export type BarChartProps = {
   height: number;
   data: BarChartDataType[];
   padding?: number;
+  showLabel?: boolean;
 };
 
 export type BarProps = PolymorphicPropsType<"g"> &

@@ -35,3 +35,7 @@ export const Orient: Story = {
     </div>
   ),
 };
+
+export const LabelHide: Story = {
+  render: () => <BarChart width={400} height={400} data={data} showLabel />,
+};
