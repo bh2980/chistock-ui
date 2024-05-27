@@ -22,5 +22,30 @@ const data = [
 ];
 
 export const Default: Story = {
-  render: () => <BarChart width={400} height={300} data={data} />,
+  render: () => <BarChart width={400} height={256} data={data} />,
+};
+
+export const Orient: Story = {
+  render: () => (
+    <div className="flex gap-md">
+      <BarChart width={128} height={128} data={data} orient="UP" />
+      <BarChart width={128} height={128} data={data} orient="DOWN" />
+      <BarChart width={128} height={128} data={data} orient="LEFT" />
+      <BarChart width={128} height={128} data={data} orient="RIGHT" />
+    </div>
+  ),
+};
+
+export const ShowLabel: Story = {
+  render: () => <BarChart width={400} height={256} data={data} showLabel />,
+};
+
+export const Padding: Story = {
+  render: () => (
+    <div className="flex gap-md">
+      <BarChart width={256} height={256} data={data} padding={0.1} />
+      <BarChart width={256} height={256} data={data} padding={0.45} />
+      <BarChart width={256} height={256} data={data} padding={0.8} />
+    </div>
+  ),
 };

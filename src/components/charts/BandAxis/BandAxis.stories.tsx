@@ -29,38 +29,24 @@ const xScale = scaleBand()
   .range([0, length]);
 
 export const Default: Story = {
-  render: () => (
-    <svg width={256} height={256}>
-      <BandAxis axisScale={xScale} transform="translate(0, 128)" />
-    </svg>
-  ),
+  render: () => <BandAxis axisScale={xScale} width={256} height={48} />,
 };
 
-export const Direction: Story = {
+export const Orient: Story = {
   render: () => (
-    <svg width={512} height={256}>
-      <g transform="translate(128, 0)">
-        <BandAxis axisScale={xScale} orient="DOWN" transform="translate(0, 5)" />
-        <BandAxis axisScale={xScale} orient="UP" transform="translate(0, 245)" />
-        <BandAxis axisScale={xScale} orient="RIGHT" transform="translate(280, 0)" />
-        <BandAxis axisScale={xScale} orient="LEFT" transform="translate(-24, 0)" />
-      </g>
-    </svg>
+    <div className="flex gap-md items-center">
+      <BandAxis axisScale={xScale} orient="DOWN" width={256} height={48} />
+      <BandAxis axisScale={xScale} orient="UP" width={256} height={48} />
+      <BandAxis axisScale={xScale} orient="RIGHT" width={64} height={256} />
+      <BandAxis axisScale={xScale} orient="LEFT" width={64} height={256} />
+    </div>
   ),
 };
 
 export const LabelHide: Story = {
-  render: () => (
-    <svg width={256} height={256}>
-      <BandAxis axisScale={xScale} transform="translate(0, 128)" labelHide />
-    </svg>
-  ),
+  render: () => <BandAxis width={256} height={6} axisScale={xScale} labelHide />,
 };
 
 export const LineHide: Story = {
-  render: () => (
-    <svg width={256} height={256}>
-      <BandAxis axisScale={xScale} transform="translate(0, 128)" lineHide />
-    </svg>
-  ),
+  render: () => <BandAxis width={256} height={32} axisScale={xScale} lineHide />,
 };

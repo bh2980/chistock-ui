@@ -1,69 +1,33 @@
 import { max, scaleBand, scaleLinear } from "d3";
-import BandAxis from "@charts/BandAxis";
 import { barChartVariants } from "./BarChart.styles";
-import type { BarChartProps, BarProps } from "./BarChart.types";
+import type { BarChartProps } from "./BarChart.types";
 
-//TODO useBar를 통한 속성 제어가 필요할지도?
-//useBar가 있으면 nullBarHeight를 별도로 제공해줄 필요가 없을수도?
-const Bar = ({
-  xScale,
-  yScale,
+// TODO 반응형 대응
+// TODO 애니메이션 설정
+// TODO label을 잘리지 않게 하기 위한 labelOffset 설정, label transform, formatting 등 커스텀 설정 필요
+const BarChart = ({
+  width,
+  height,
   data,
-  nullBarHeight = 0,
-  animationDuration = "0.3s",
-  rx,
-  labelPostfix = "",
-  ...props
-}: BarProps) => {
-  const rectWidth = xScale.bandwidth();
-  const rectHeight = yScale(0) - yScale(data.value || nullBarHeight);
-  const rectX = xScale(data.label.toString())!;
-  const rectY = yScale(data.value || nullBarHeight);
+  orient = "UP",
+  padding = 0.5,
+  showLabel,
+  labelOffset = 24,
+}: BarChartProps) => {
+  const isVertical = orient === "UP" || orient === "DOWN";
 
-  const labelOffset = 12;
+  const labelRange = isVertical ? width : height;
+  const valueRange = isVertical ? height - labelOffset : width - labelOffset;
 
-  return (
-    <g {...props}>
-      <rect
-        width={rectWidth}
-        height={rectHeight}
-        x={rectX}
-        y={rectY}
-        rx={rx}
-        stroke={data.value === null ? "inherit" : undefined}
-        strokeDasharray={data.value === null ? "6, 4" : undefined}
-        fill={data.value === null ? "none" : undefined}
-      >
-        <animate attributeName="height" from="0" to={rectHeight} dur={animationDuration} fill="freeze" />
-        <animate attributeName="y" from={yScale(0)} to={rectY} dur={animationDuration} fill="freeze" />
-      </rect>
-      <text x={rectX + rectWidth / 2} y={rectY - labelOffset} className="stroke-none">
-        {data.value ? `${data.value}${labelPostfix}` : "?"}
-        <animate
-          attributeName="y"
-          from={yScale(0) - labelOffset}
-          to={rectY - labelOffset}
-          dur={animationDuration}
-          fill="freeze"
-        />
-      </text>
-    </g>
-  );
-};
-
-// TODO useBar와 useAxis를 이용하면 줄일 수 있을 지도?
-const BarChart = ({ width, height, data, padding = 0.5 }: BarChartProps) => {
-  const margin = { x: 0, y: 32 };
-
-  const xScale = scaleBand()
+  const labelScale = scaleBand()
     .domain(data.map((d) => d.label.toString()))
-    .range([margin.x, width - margin.x])
+    .range([0, labelRange])
     .padding(padding);
 
-  const yScale = scaleLinear()
+  const valueScale = scaleLinear()
     .domain([0, max(data, (d) => (d.value ? d.value : 0))!])
     .nice()
-    .range([height - margin.y, margin.y]);
+    .range([0, valueRange]);
 
   const nullBarHeight =
     data.reduce((acc, cur) => {
@@ -71,25 +35,42 @@ const BarChart = ({ width, height, data, padding = 0.5 }: BarChartProps) => {
       return acc;
     }, 0) / data.length;
 
-  const { bar, xAxis } = barChartVariants();
+  const { bar, labelText } = barChartVariants();
 
   return (
     <svg width={width} height={height}>
       {data.map((data, i) => {
+        const rectWidth = isVertical ? labelScale.bandwidth() : valueScale(data.value || nullBarHeight);
+        const rectHeight = isVertical ? valueScale(data.value || nullBarHeight) : labelScale.bandwidth();
+        const rectX = isVertical ? labelScale(data.label.toString())! : orient === "LEFT" ? 0 : width - rectWidth;
+        const rectY = isVertical ? (orient === "UP" ? height - rectHeight : 0) : labelScale(data.label.toString())!;
+
+        const labelAlign = {
+          UP: [rectX + rectWidth / 2, rectY - 16],
+          DOWN: [rectX + rectWidth / 2, rectHeight + 16],
+          LEFT: [rectWidth + 28, rectY + rectHeight / 2],
+          RIGHT: [rectX - 28, rectY + rectHeight / 2],
+        };
+
+        const [labelX, labelY] = labelAlign[orient];
+
         return (
-          <Bar
-            key={`bar-${i}`}
-            xScale={xScale}
-            yScale={yScale}
-            data={data}
-            rx="6"
-            nullBarHeight={nullBarHeight}
-            textAnchor="middle"
-            className={bar()}
-          />
+          <g key={`bar-${i}`} textAnchor="middle" dominantBaseline={"central"}>
+            <rect
+              width={rectWidth}
+              height={rectHeight}
+              x={rectX}
+              y={rectY}
+              rx={6}
+              strokeDasharray={data.value === null ? "6, 4" : undefined}
+              className={bar({ value: Boolean(data.value) })}
+            />
+            <text x={labelX} y={labelY} className={labelText({ showLabel })}>
+              {data.value ? `${data.value}` : "?"}
+            </text>
+          </g>
         );
       })}
-      <BandAxis axisScale={xScale} transform={`translate(0, ${height - margin.y})`} className={xAxis()} lineHide />
     </svg>
   );
 };
