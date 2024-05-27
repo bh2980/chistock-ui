@@ -96,7 +96,7 @@ export default {
             },
           },
           secondary: {
-            DEFAULT: color.secondary[20],
+            DEFAULT: color.secondary[40],
             on: color.secondary[100],
             container: {
               DEFAULT: color.secondary[90],
