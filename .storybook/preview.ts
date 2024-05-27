@@ -11,6 +11,11 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    options: {
+      storySort: {
+        order: ["atoms", "Molecules", "charts"],
+      },
+    },
   },
   decorators: [
     withThemeByClassName({
