@@ -1,45 +1,23 @@
 import { max, scaleBand, scaleLinear } from "d3";
 import { barChartVariants } from "./BarChart.styles";
-import type { BarChartProps, BarProps } from "./BarChart.types";
-
-const Bar = ({ xScale, yScale, data, nullBarHeight = 0, rx, labelPostfix = "", ...props }: BarProps) => {
-  const rectWidth = xScale.bandwidth();
-  const rectHeight = yScale(0) - yScale(data.value || nullBarHeight);
-  const rectX = xScale(data.label.toString())!;
-  const rectY = yScale(data.value || nullBarHeight);
-
-  const labelOffset = 12;
-
-  return (
-    <g {...props}>
-      <rect
-        width={rectWidth}
-        height={rectHeight}
-        x={rectX}
-        y={rectY}
-        rx={rx}
-        stroke={data.value === null ? "inherit" : undefined}
-        strokeDasharray={data.value === null ? "6, 4" : undefined}
-        fill={data.value === null ? "none" : undefined}
-      />
-      <text x={rectX + rectWidth / 2} y={rectY - labelOffset} className="stroke-none">
-        {data.value ? `${data.value}${labelPostfix}` : "?"}
-      </text>
-    </g>
-  );
-};
+import type { BarChartProps } from "./BarChart.types";
 
 // TODO 방향 설정이 필요
-const BarChart = ({ width, height, data, padding = 0.5 }: BarChartProps) => {
-  const xScale = scaleBand()
+const BarChart = ({ width, height, data, orient = "UP", padding = 0.5 }: BarChartProps) => {
+  const isVertical = orient === "UP" || orient === "DOWN";
+
+  const labelRange = isVertical ? width : height;
+  const valueRange = isVertical ? height : width;
+
+  const labelScale = scaleBand()
     .domain(data.map((d) => d.label.toString()))
-    .range([0, width])
+    .range([0, labelRange])
     .padding(padding);
 
-  const yScale = scaleLinear()
+  const valueScale = scaleLinear()
     .domain([0, max(data, (d) => (d.value ? d.value : 0))!])
     .nice()
-    .range([height, 0]);
+    .range([0, valueRange]);
 
   const nullBarHeight =
     data.reduce((acc, cur) => {
@@ -47,21 +25,26 @@ const BarChart = ({ width, height, data, padding = 0.5 }: BarChartProps) => {
       return acc;
     }, 0) / data.length;
 
-  const { bar } = barChartVariants();
-
   return (
     <svg width={width} height={height}>
       {data.map((data, i) => {
+        const rectWidth = isVertical ? labelScale.bandwidth() : valueScale(data.value || nullBarHeight);
+        const rectHeight = isVertical ? valueScale(data.value || nullBarHeight) : labelScale.bandwidth();
+        const rectX = isVertical ? labelScale(data.label.toString()) : orient === "LEFT" ? 0 : width - rectWidth;
+        const rectY = isVertical ? (orient === "UP" ? height - rectHeight : 0) : labelScale(data.label.toString());
+
+        console.log(data);
+
         return (
-          <Bar
+          <rect
             key={`bar-${i}`}
-            xScale={xScale}
-            yScale={yScale}
-            data={data}
-            rx="6"
-            nullBarHeight={nullBarHeight}
-            textAnchor="middle"
-            className={bar()}
+            width={rectWidth}
+            height={rectHeight}
+            x={rectX}
+            y={rectY}
+            rx={6}
+            strokeDasharray={data.value === null ? "6, 4" : undefined}
+            className={barChartVariants({ value: Boolean(data.value) })}
           />
         );
       })}

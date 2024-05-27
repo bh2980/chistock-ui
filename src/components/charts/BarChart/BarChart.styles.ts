@@ -1,7 +1,14 @@
 import { tv } from "@utils/customTV";
 
 export const barChartVariants = tv({
-  slots: {
-    bar: "stroke-secondary fill-secondary font-bold text-sm",
+  base: "font-bold text-sm",
+  variants: {
+    value: {
+      true: "fill-secondary",
+      false: "stroke-secondary fill-none",
+    },
+  },
+  defaultVariants: {
+    value: true,
   },
 });
