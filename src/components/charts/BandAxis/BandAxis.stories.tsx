@@ -29,22 +29,22 @@ const xScale = scaleBand()
   .range([0, length]);
 
 export const Default: Story = {
-  render: () => <BandAxis axisScale={xScale} width={256} height={32} />,
+  render: () => <BandAxis axisScale={xScale} width={256} height={48} />,
 };
 
 export const Orient: Story = {
   render: () => (
     <div className="flex gap-md items-center">
-      <BandAxis axisScale={xScale} orient="DOWN" width={256} height={32} />
-      <BandAxis axisScale={xScale} orient="UP" width={256} height={32} />
-      <BandAxis axisScale={xScale} orient="RIGHT" width={48} height={256} />
-      <BandAxis axisScale={xScale} orient="LEFT" width={48} height={256} />
+      <BandAxis axisScale={xScale} orient="DOWN" width={256} height={48} />
+      <BandAxis axisScale={xScale} orient="UP" width={256} height={48} />
+      <BandAxis axisScale={xScale} orient="RIGHT" width={64} height={256} />
+      <BandAxis axisScale={xScale} orient="LEFT" width={64} height={256} />
     </div>
   ),
 };
 
 export const LabelHide: Story = {
-  render: () => <BandAxis width={256} height={32} axisScale={xScale} labelHide />,
+  render: () => <BandAxis width={256} height={6} axisScale={xScale} labelHide />,
 };
 
 export const LineHide: Story = {
