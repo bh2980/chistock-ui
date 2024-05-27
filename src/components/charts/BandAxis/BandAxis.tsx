@@ -2,6 +2,8 @@ import { isEven } from "@utils/isEven";
 import { BandAxisVariants } from "./BandAxis.styles";
 import { BandAxisProps } from "./BandAxis.types";
 
+// TODO width, height가 없는 반응형 대응이 필요
+// TODO 조립형으로 하면 각 컴포넌트 별로 props 분리 및 label 회전, 포맷팅도 가능할 듯 -> 꼭 필요한가? 싶긴 함
 const BandAxis = ({
   width,
   height,
