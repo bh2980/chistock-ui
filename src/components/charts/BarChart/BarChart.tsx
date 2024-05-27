@@ -1,20 +1,8 @@
 import { max, scaleBand, scaleLinear } from "d3";
-import BandAxis from "@charts/BandAxis";
 import { barChartVariants } from "./BarChart.styles";
 import type { BarChartProps, BarProps } from "./BarChart.types";
 
-//TODO useBar를 통한 속성 제어가 필요할지도?
-//useBar가 있으면 nullBarHeight를 별도로 제공해줄 필요가 없을수도?
-const Bar = ({
-  xScale,
-  yScale,
-  data,
-  nullBarHeight = 0,
-  animationDuration = "0.3s",
-  rx,
-  labelPostfix = "",
-  ...props
-}: BarProps) => {
+const Bar = ({ xScale, yScale, data, nullBarHeight = 0, rx, labelPostfix = "", ...props }: BarProps) => {
   const rectWidth = xScale.bandwidth();
   const rectHeight = yScale(0) - yScale(data.value || nullBarHeight);
   const rectX = xScale(data.label.toString())!;
@@ -33,37 +21,25 @@ const Bar = ({
         stroke={data.value === null ? "inherit" : undefined}
         strokeDasharray={data.value === null ? "6, 4" : undefined}
         fill={data.value === null ? "none" : undefined}
-      >
-        <animate attributeName="height" from="0" to={rectHeight} dur={animationDuration} fill="freeze" />
-        <animate attributeName="y" from={yScale(0)} to={rectY} dur={animationDuration} fill="freeze" />
-      </rect>
+      />
       <text x={rectX + rectWidth / 2} y={rectY - labelOffset} className="stroke-none">
         {data.value ? `${data.value}${labelPostfix}` : "?"}
-        <animate
-          attributeName="y"
-          from={yScale(0) - labelOffset}
-          to={rectY - labelOffset}
-          dur={animationDuration}
-          fill="freeze"
-        />
       </text>
     </g>
   );
 };
 
-// TODO useBar와 useAxis를 이용하면 줄일 수 있을 지도?
+// TODO 방향 설정이 필요
 const BarChart = ({ width, height, data, padding = 0.5 }: BarChartProps) => {
-  const margin = { x: 0, y: 32 };
-
   const xScale = scaleBand()
     .domain(data.map((d) => d.label.toString()))
-    .range([margin.x, width - margin.x])
+    .range([0, width])
     .padding(padding);
 
   const yScale = scaleLinear()
     .domain([0, max(data, (d) => (d.value ? d.value : 0))!])
     .nice()
-    .range([height - margin.y, margin.y]);
+    .range([height, 0]);
 
   const nullBarHeight =
     data.reduce((acc, cur) => {
@@ -71,7 +47,7 @@ const BarChart = ({ width, height, data, padding = 0.5 }: BarChartProps) => {
       return acc;
     }, 0) / data.length;
 
-  const { bar, xAxis } = barChartVariants();
+  const { bar } = barChartVariants();
 
   return (
     <svg width={width} height={height}>
@@ -89,7 +65,6 @@ const BarChart = ({ width, height, data, padding = 0.5 }: BarChartProps) => {
           />
         );
       })}
-      <BandAxis axisScale={xScale} transform={`translate(0, ${height - margin.y})`} className={xAxis()} lineHide />
     </svg>
   );
 };

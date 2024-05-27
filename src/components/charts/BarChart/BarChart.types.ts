@@ -17,6 +17,5 @@ export type BarProps = PolymorphicPropsType<"g"> &
     yScale: ScaleLinear<number, number, never>;
     data: BarChartDataType;
     nullBarHeight?: number;
-    animationDuration?: string;
     labelPostfix?: string;
   };
