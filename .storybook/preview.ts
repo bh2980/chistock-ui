@@ -1,6 +1,7 @@
 import { withThemeByClassName } from "@storybook/addon-themes";
 import { Preview } from "@storybook/react";
 import "../index.css";
+import "./storybook.css";
 
 const preview: Preview = {
   parameters: {
@@ -8,6 +9,11 @@ const preview: Preview = {
       matchers: {
         color: /(background|color)$/i,
         date: /Date$/i,
+      },
+    },
+    options: {
+      storySort: {
+        order: ["atoms", "Molecules", "charts"],
       },
     },
   },

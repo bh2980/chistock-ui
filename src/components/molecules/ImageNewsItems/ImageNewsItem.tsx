@@ -20,7 +20,7 @@ const ImageNewsItem = ({
     imageNewsItemVariants();
 
   return (
-    <a className={root({ className: interactionStateVariants({ className }) })} {...props}>
+    <a className={root({ className: interactionStateVariants({ focusOutlineOffset: true, className }) })} {...props}>
       {image}
       <div className={newsItemWrapper()}>
         <div className={newsInfoWrapper()}>

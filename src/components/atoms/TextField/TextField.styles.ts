@@ -62,7 +62,7 @@ export const labelVariants = tv({
     "text-xs",
     "transition-['font-size']",
     "peer-placeholder-shown:text-md",
-    "peer-placeholder-shown:top-[11rem]",
+    "peer-placeholder-shown:top-sm",
   ],
   variants: {
     error: {

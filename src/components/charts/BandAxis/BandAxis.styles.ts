@@ -3,8 +3,8 @@ import { tv } from "@utils/customTV";
 export const BandAxisVariants = tv({
   slots: {
     root: "stroke-surface-on",
-    axisLine: "fill-none",
-    labelText: "stroke-none",
+    axisLine: "fill-none stroke-surface-on",
+    labelText: "stroke-none fill-surface-on",
   },
   variants: {
     lineHide: {

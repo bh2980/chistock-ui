@@ -25,5 +25,5 @@ const dummyData = {
 
 export const Default: Story = {
   args: dummyData,
-  render: (args) => <NewsItem href="https://www.naver.com" {...args} />,
+  render: (args) => <NewsItem href="/?path=/docs/molecules-news-imagenewsitem" {...args} />,
 };
