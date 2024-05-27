@@ -42,8 +42,8 @@ const BarChart = ({
       {data.map((data, i) => {
         const rectWidth = isVertical ? labelScale.bandwidth() : valueScale(data.value || nullBarHeight);
         const rectHeight = isVertical ? valueScale(data.value || nullBarHeight) : labelScale.bandwidth();
-        const rectX = isVertical ? labelScale(data.label.toString())! : orient === "LEFT" ? 0 : width - rectWidth;
-        const rectY = isVertical ? (orient === "UP" ? height - rectHeight : 0) : labelScale(data.label.toString())!;
+        const rectX = isVertical ? labelScale(data.label.toString())! : orient === "LEFT" ? 1 : width - rectWidth - 1;
+        const rectY = isVertical ? (orient === "UP" ? height - rectHeight - 1 : 1) : labelScale(data.label.toString())!;
 
         const labelAlign = {
           UP: [rectX + rectWidth / 2, rectY - 16],
