@@ -2,7 +2,7 @@ import { tv } from "@utils/customTV";
 
 export const barChartVariants = tv({
   slots: {
-    bar: "font-bold text-sm",
+    bar: "",
     labelText: "",
   },
   variants: {

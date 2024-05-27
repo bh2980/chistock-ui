@@ -2,11 +2,19 @@ import { max, scaleBand, scaleLinear } from "d3";
 import { barChartVariants } from "./BarChart.styles";
 import type { BarChartProps } from "./BarChart.types";
 
-// TODO label을 위한 gap 설정, label transform 커스텀 설정 필요
-const BarChart = ({ width, height, data, orient = "UP", padding = 0.5, showLabel }: BarChartProps) => {
+// TODO 반응형 대응
+// TODO 애니메이션 설정
+// TODO label을 잘리지 않게 하기 위한 labelOffset 설정, label transform, formatting 등 커스텀 설정 필요
+const BarChart = ({
+  width,
+  height,
+  data,
+  orient = "UP",
+  padding = 0.5,
+  showLabel,
+  labelOffset = 24,
+}: BarChartProps) => {
   const isVertical = orient === "UP" || orient === "DOWN";
-
-  const labelOffset = 0;
 
   const labelRange = isVertical ? width : height;
   const valueRange = isVertical ? height - labelOffset : width - labelOffset;
@@ -38,8 +46,8 @@ const BarChart = ({ width, height, data, orient = "UP", padding = 0.5, showLabel
         const rectY = isVertical ? (orient === "UP" ? height - rectHeight : 0) : labelScale(data.label.toString())!;
 
         const labelAlign = {
-          UP: [rectX + rectWidth / 2, rectY - 24],
-          DOWN: [rectX + rectWidth / 2, rectHeight + 24],
+          UP: [rectX + rectWidth / 2, rectY - 16],
+          DOWN: [rectX + rectWidth / 2, rectHeight + 16],
           LEFT: [rectWidth + 28, rectY + rectHeight / 2],
           RIGHT: [rectX - 28, rectY + rectHeight / 2],
         };
