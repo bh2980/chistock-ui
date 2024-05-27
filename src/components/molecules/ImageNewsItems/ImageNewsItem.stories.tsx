@@ -32,7 +32,7 @@ export const Default: Story = {
     <ImageNewsItem
       {...args}
       image={<ImageNewsItem.Image src={IMAGE_URL} alt={args.title} />}
-      href="https://www.naver.com"
+      href="/?path=/docs/molecules-news-newsitem"
       className="w-[240rem] h-[400rem]"
     />
   ),
