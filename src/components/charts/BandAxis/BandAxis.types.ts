@@ -7,6 +7,8 @@ export type AxisOrient = "UP" | "DOWN" | "RIGHT" | "LEFT";
 
 type BandAxisBaseProps = {
   axisScale: ScaleBand<string>;
+  width: number;
+  height: number;
   outerTickLength?: number;
   innerTickLength?: number;
   orient?: AxisOrient;
@@ -14,6 +16,6 @@ type BandAxisBaseProps = {
   lineHide?: boolean;
 };
 
-export type BandAxisProps = Omit<ComponentPropsWithInnerRef<"g">, "textAnchor"> &
+export type BandAxisProps = Omit<ComponentPropsWithInnerRef<"svg">, "width" | "height" | "textAnchor"> &
   VariantProps<typeof BandAxisVariants> &
   BandAxisBaseProps;
