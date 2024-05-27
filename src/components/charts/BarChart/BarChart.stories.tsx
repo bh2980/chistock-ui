@@ -39,3 +39,13 @@ export const Orient: Story = {
 export const ShowLabel: Story = {
   render: () => <BarChart width={400} height={256} data={data} showLabel />,
 };
+
+export const Padding: Story = {
+  render: () => (
+    <div className="flex gap-md">
+      <BarChart width={256} height={256} data={data} padding={0.1} />
+      <BarChart width={256} height={256} data={data} padding={0.45} />
+      <BarChart width={256} height={256} data={data} padding={0.8} />
+    </div>
+  ),
+};
